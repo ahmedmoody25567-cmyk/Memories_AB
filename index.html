@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ذكرياتنا</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" id="sky" aria-hidden="true"></div>
+
+<section id="lock">
+  <button id="heart" aria-label="افتح الذكريات">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.8 4 6.6 4c2 0 3.7 1 5.4 3 1.7-2 3.4-3 5.4-3 3.8 0 5.7 4.4 4.2 7.8C19.5 16.4 12 21 12 21z"/></svg>
+  </button>
+  <h1 class="lock-title">ذكرياتنا</h1>
+  <p id="hint">دوس على القلب عشان تفتح</p>
+
+  <div id="pad">
+    <div id="dots"></div>
+    <div id="keys"></div>
+    <p id="msg" role="status"></p>
+  </div>
+</section>
+
+<main id="memories" hidden>
+  <header class="intro">
+    <h1 id="title"></h1>
+    <p id="sub"></p>
+  </header>
+  <div id="list"></div>
+  <footer class="end" id="end"></footer>
+</main>
+
+<div id="lb" hidden><img alt=""><p></p></div>
+
+<script src="script.js"></script>
+</body>
+</html>

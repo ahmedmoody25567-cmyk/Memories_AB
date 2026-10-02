@@ -1,0 +1,49 @@
+:root{--bg:#1c0610;--bg2:#4a0f26;--wine:#7a1634;--rose:#e8a0aa;--gold:#f0cfb5;--paper:#f8ece6;--ink:#5b1428;--text:#fbeff0;--mute:#c9a3ac}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{background:radial-gradient(ellipse at 50% 0,var(--bg2),var(--bg) 70%) fixed;color:var(--text);font-family:Tajawal,Tahoma,sans-serif;font-weight:300;line-height:1.9;overflow-x:hidden}
+[hidden]{display:none!important}
+h1,figcaption,.end{font-family:'Aref Ruqaa',serif}
+
+.sky{position:fixed;inset:0;pointer-events:none;z-index:0}
+.sky span{position:absolute;bottom:-40px;color:#b3243f;opacity:0;animation:rise linear infinite}
+@keyframes rise{10%{opacity:.4}100%{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+
+/* lock */
+#lock{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:32px 20px;text-align:center}
+#heart{background:none;border:0;cursor:pointer;width:min(58vw,260px);transition:width .5s,transform .2s;animation:beat 1.8s ease-in-out infinite}
+#heart svg{width:100%;fill:#b3243f;filter:drop-shadow(0 0 30px #b3243fcc)}
+#heart:hover{transform:scale(1.05)}
+#heart:focus-visible,.key:focus-visible{outline:2px solid var(--gold);outline-offset:6px;border-radius:50%}
+.opened #heart{width:min(30vw,120px)}
+@keyframes beat{0%,100%{transform:scale(1)}14%{transform:scale(1.1)}28%{transform:scale(1)}42%{transform:scale(1.07)}}
+.lock-title{font-size:clamp(52px,14vw,92px);color:var(--rose);line-height:1.2;text-shadow:0 0 30px #b3243f88}
+#hint{font-size:clamp(18px,4.5vw,24px);color:var(--gold)}
+#pad{display:none;flex-direction:column;align-items:center;gap:22px;margin-top:14px}
+.opened #pad{display:flex}
+#dots{display:flex;gap:16px;direction:ltr}
+#dots i{width:20px;height:20px;border-radius:50%;border:2px solid var(--rose);transition:.2s}
+#dots i.on{background:#d6455f;border-color:#d6455f;box-shadow:0 0 14px #d6455f}
+#keys{display:grid;grid-template-columns:repeat(3,clamp(72px,22vw,96px));gap:clamp(12px,3vw,18px);direction:ltr}
+.key{aspect-ratio:1;border-radius:50%;border:1px solid #e8a0aa55;background:#7a163455;backdrop-filter:blur(6px);color:var(--text);font:400 clamp(28px,8vw,38px) Tajawal,sans-serif;cursor:pointer;transition:.15s}
+.key:hover{background:#7a1634aa}
+.key:active{background:#b3243f;transform:scale(.94)}
+#msg{min-height:30px;font-size:19px;color:var(--gold)}
+.shake{animation:sh .4s}
+@keyframes sh{20%,60%{transform:translateX(-10px)}40%,80%{transform:translateX(10px)}}
+
+/* memories */
+#memories{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:70px 18px 110px;animation:fade 1.4s}
+@keyframes fade{from{opacity:0}}
+.intro{text-align:center;margin-bottom:64px}
+.intro h1{font-size:clamp(52px,14vw,88px);color:var(--rose);line-height:1.2;text-shadow:0 0 30px #b3243f77}
+.intro p{font-size:clamp(20px,5vw,26px);color:var(--gold);margin-top:6px}
+figure{background:var(--paper);padding:14px 14px 22px;border-radius:6px;box-shadow:0 20px 50px #000a;transform:rotate(var(--r,0deg));margin:0 auto 70px}
+figure img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 35%;border-radius:3px;cursor:zoom-in;background:#2a0612}
+figcaption{margin-top:18px;padding:0 6px;text-align:center;font-size:clamp(20px,5.2vw,25px);line-height:1.9;color:var(--ink)}
+.end{text-align:center;font-weight:700;font-size:clamp(28px,7.5vw,40px);line-height:1.8;color:var(--rose);margin-top:30px;text-shadow:0 0 24px #b3243f66}
+
+#lb{position:fixed;inset:0;z-index:9;background:#12030af2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px;cursor:zoom-out}
+#lb img{max-width:100%;max-height:80vh;border-radius:10px}
+#lb p{font:400 22px 'Aref Ruqaa',serif;text-align:center;color:var(--text)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
